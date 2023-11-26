@@ -17,12 +17,16 @@ public class Screenshot {
 		
 		driver.get("https://www.google.com/");
 
+		//Using interface to take screenshot of the driver
 		TakesScreenshot sf=(TakesScreenshot) driver;
 		
+		//getting the source file in file format
 		File sourceFile = sf.getScreenshotAs(OutputType.FILE);
 		
+		//creating the destination file for storing the source file
 		File destinationFile = new File("D:\\Screenshot\\google1.png");
 		
+		//coping the source file in the destination file
 		FileHandler.copy(sourceFile, destinationFile);
 		Thread.sleep(3000);
 		
